@@ -21,5 +21,18 @@
         "left": "60dp",
         "top": 0
     }
+  },
+  {
+    "type": "Ti.UI.Label",
+    "properties": {
+        "color": "black",
+        "text": "{{infos.description}}",
+        "font": {
+          "fontFamily": "Arial",
+          "fontSize": "15dp"
+        },
+        "left": "80dp",
+        "top": 10
+    }
   }
 ]
