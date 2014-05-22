@@ -20,7 +20,7 @@ describe('Builder', function () {
 
     builder.build();
 
-    assert.equal(builder.exports.mapper.mapping['imageview-0'].image, 'image');
+    assert.equal(builder.exports.mapper.mapping['imageview-0'].image, '{{image}}');
   });
 
 });

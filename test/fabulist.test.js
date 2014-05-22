@@ -24,7 +24,7 @@ describe('fabulist', function () {
   it('should build the associated mapping', function () {
     var tpl = fabulist.createTemplate(fixture);
 
-    assert.equal(tpl.exports.mapper.mapping['imageview-0'].image, 'image');
+    assert.equal(tpl.exports.mapper.mapping['imageview-0'].image, '{{image}}');
   });
 
 

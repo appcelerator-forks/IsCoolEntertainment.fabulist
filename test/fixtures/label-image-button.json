@@ -1,38 +1,43 @@
-[
-  {
-    "type": "Ti.UI.ImageView",
-    "properties": {
-        "image": "{{image}}",
-        "width": "50dp",
-        "height": "50dp",
-        "left": 0
-    }
+{
+  "properties": {
+    "backgroundColor": "#e3e3e3"
   },
-  {
-    "type": "Ti.UI.Label",
-    "properties": {
-        "color": "black",
-        "text": "{{infos.name}}",
-        "font": {
-          "fontFamily": "Arial",
-          "fontSize": "20dp",
-          "fontWeight": "bold"
-        },
-        "left": "60dp",
-        "top": 0
+  "childTemplates": [
+    {
+      "type": "Ti.UI.ImageView",
+      "properties": {
+          "image": "{{image}}",
+          "width": "50dp",
+          "height": "50dp",
+          "left": 0
+      }
+    },
+    {
+      "type": "Ti.UI.Label",
+      "properties": {
+          "color": "black",
+          "text": "{{infos.name}}",
+          "font": {
+            "fontFamily": "Arial",
+            "fontSize": "20dp",
+            "fontWeight": "bold"
+          },
+          "left": "60dp",
+          "top": 0
+      }
+    },
+    {
+      "type": "Ti.UI.Label",
+      "properties": {
+          "color": "black",
+          "text": "{{infos.description}}",
+          "font": {
+            "fontFamily": "Arial",
+            "fontSize": "15dp"
+          },
+          "left": "80dp",
+          "top": 10
+      }
     }
-  },
-  {
-    "type": "Ti.UI.Label",
-    "properties": {
-        "color": "black",
-        "text": "{{infos.description}}",
-        "font": {
-          "fontFamily": "Arial",
-          "fontSize": "15dp"
-        },
-        "left": "80dp",
-        "top": 10
-    }
-  }
-]
+  ]
+}

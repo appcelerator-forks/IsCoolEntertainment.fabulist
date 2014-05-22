@@ -28,6 +28,10 @@ fabulist.createFabulistView = function (opts) {
     return listView;
   };
 
+  listView.use = function (name, helper) {
+    exported.mapper.use(name, helper);
+  };
+
   listView.setSections([mainSection]);
   return listView;
 };

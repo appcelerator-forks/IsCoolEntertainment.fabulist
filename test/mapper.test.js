@@ -32,4 +32,18 @@ describe('Mapper', function () {
     assert.equal(mapper.resolve({name: 'foobar'}, 'text'), null);
   });
 
+  it('should use the uppercase helper', function () {
+    var mapper = new Mapper();
+
+    Object.keys(fixture).forEach(function (id) {
+      mapper.map(id, fixture[id]);
+    });
+
+    mapper.use('uppercase', function (param) {
+      return param.toUpperCase();
+    });
+
+    assert.equal(mapper.feed([{name: 'foobar'}])[0]['button-0'].title, 'FOOBAR');
+  });
+
 });
