@@ -41,7 +41,7 @@ describe('fabulist', function () {
       template: fabulist.createTemplate(fixture)
     });
 
-    listView.feed({name: 'foobar'});
+    listView.feed([{name: 'foobar'}]);
   });
 
 });

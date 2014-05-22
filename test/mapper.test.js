@@ -11,7 +11,7 @@ describe('Mapper', function () {
       mapper.map(id, fixture[id]);
     });
 
-    assert.equal(mapper.feed({name: 'foobar'})['label-0'].text, 'foobar');
+    assert.equal(mapper.feed([{name: 'foobar'}])[0]['label-0'].text, 'foobar');
   });
 
   it('should resolve foo.bar=42', function () {

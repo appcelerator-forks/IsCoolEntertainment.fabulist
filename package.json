@@ -11,7 +11,8 @@
   "license": "ISC",
   "devDependencies": {
     "mocha": "~1.19.0",
-    "mockti": "~1.1.1"
+    "mockti": "~1.1.1",
+    "tetanize": "0.0.7"
   },
   "dependencies": {}
 }
