@@ -15,4 +15,12 @@ describe('Builder', function () {
     assert.equal(builder.exports.template.childTemplates[2].bindId, 'label-1');
   });
 
+  it('should map each view by id', function () {
+    var builder = new Builder(fixture);
+
+    builder.build();
+
+    assert.equal(builder.exports.mapper.mapping['imageview-0'].image, 'image');
+  });
+
 });
