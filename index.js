@@ -1,3 +1,4 @@
+var Mapper = require('./lib/mapper');
 var Builder = require('./lib/builder');
 
 var fabulist = module.exports = {};
@@ -22,9 +23,21 @@ fabulist.createFabulistView = function (opts) {
   
   var listView = fabulist.createListView(opts);
   var mainSection = fabulist.createListSection();
+  var collection = [];
+
+  listView.addEventListener('itemclick', function (evt) {
+    if (evt.itemIndex < collection.length) {
+      listView.fireEvent('select', {
+        itemIndex: evt.itemIndex,
+        item: collection[evt.itemIndex]
+      });
+    }
+  });
 
   listView.feed = function (data) {
-    mainSection.setItems(exported.mapper.feed(data));
+    collection = Array.isArray(data) ? data : [];
+    mainSection.setItems(exported.mapper.feed(collection));
+    
     return listView;
   };
 
@@ -34,4 +47,8 @@ fabulist.createFabulistView = function (opts) {
 
   listView.setSections([mainSection]);
   return listView;
+};
+
+fabulist.use = function (name, helper) {
+  Mapper.use(name, helper);
 };
