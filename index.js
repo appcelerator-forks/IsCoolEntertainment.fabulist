@@ -43,14 +43,14 @@ fabulist.createFabulistView = function (opts) {
 
   listView.update = function (dataArray, animation) {
     dataArray.forEach(function (data, index) {
-      mainSection.updateItemAt(index, exported.mapper.feed(data), animation);
+      mainSection.updateItemAt(index, exported.mapper.feedOne(index, data), animation);
     });
     
     return listView;
   };
 
   listView.updateAt = function (index, data, animation) {
-    mainSection.updateItemAt(index, exported.mapper.feed(data), animation);
+    mainSection.updateItemAt(index, exported.mapper.feedOne(index, data), animation);
     
     return listView;
   };
