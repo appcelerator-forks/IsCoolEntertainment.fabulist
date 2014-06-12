@@ -34,9 +34,23 @@ fabulist.createFabulistView = function (opts) {
     }
   });
 
-  listView.feed = function (data) {
-    collection = Array.isArray(data) ? data : [];
+  listView.feed = function (dataArray) {
+    collection = Array.isArray(dataArray) ? dataArray : [];
     mainSection.setItems(exported.mapper.feed(collection));
+    
+    return listView;
+  };
+
+  listView.update = function (dataArray, animation) {
+    dataArray.forEach(function (data, index) {
+      mainSection.updateItemAt(index, exported.mapper.feed(data), animation);
+    });
+    
+    return listView;
+  };
+
+  listView.updateAt = function (index, data, animation) {
+    mainSection.updateItemAt(index, exported.mapper.feed(data), animation);
     
     return listView;
   };
