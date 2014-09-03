@@ -12,6 +12,10 @@ describe('Mapper', function () {
     });
 
     assert.equal(mapper.feed([{name: 'foobar'}])[0]['label-0'].text, 'foobar');
+    assert.equal(mapper.feed([{info: {description : 'bazqux'}}])[0]['label-1'].text, 'bazqux');
+    assert.equal(mapper.feed([{current: 1, max: 10 }])[0]['label-2'].text, '1 / 10');
+    assert.equal(mapper.feed([{definition: {name: 'foo', content: 'bar'}}])[0]['label-3'].text, 'foo: bar');
+    assert.equal(mapper.feed([{name: 'foo'}])[0]['label-4'].text, 'foo foo');
   });
 
   it('should resolve foo.bar=42', function () {
